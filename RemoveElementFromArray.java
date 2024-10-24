@@ -3,23 +3,19 @@ import java.util.Arrays;
 public class RemoveElementFromArray {
 
     public static void main(String[] args) {
-        int arr[] = {5,12, 3, 12, 4, 4, 5}; 
-        int number = 5;
-        int n= arr.length;
+        int arr[] = {12, 3, 4, 4, 5, 7, 4}; 
+        int number = 4;
 
 
-        removeElement(arr, n, number);
-
-        int []newArr = removeElement(arr, number,n);
-
+        int[] newArr = removeElement(arr, number);
         for (int i=0 ; i<newArr.length;i++){
         	System.out.println(newArr[i]);
         }
 
     }
 
-    public static int[] removeElement(int[] arr, int n, int element) {
-    	// int n = arr.length; 
+    public static int[] removeElement(int[] arr, int element) {
+    	int n = arr.length; 
         int count = 0;
 
         // finding the count
@@ -29,11 +25,8 @@ public class RemoveElementFromArray {
             }
         }
 
-        //creating new array
-
         int[] newArr = new int[n - count];
         int j = 0;
-
 
         for (int i = 0; i < n; i++) {
             if (arr[i] != element) {
@@ -41,11 +34,7 @@ public class RemoveElementFromArray {
                 j++;
             }
         }
-        return newArr;
 
-        //  for (int i = 0; i < newArr.length; i++) {
-            
-        //     System.out.println(newArr[i]);
-        // }
+        return newArr; 
     }
 }
