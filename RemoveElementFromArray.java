@@ -5,20 +5,21 @@ public class RemoveElementFromArray {
     public static void main(String[] args) {
         int arr[] = {5,12, 3, 12, 4, 4, 5}; 
         int number = 5;
+        int n= arr.length;
 
 
-        removeElement(arr, number);
+        removeElement(arr, n, number);
 
-        // int newArr = removeElement(arr, number);
+        int []newArr = removeElement(arr, number,n);
 
-        // for (int i=0 ; i<arr.length;i++){
-        // 	System.out.println(newArr[i]);
-        // }
+        for (int i=0 ; i<newArr.length;i++){
+        	System.out.println(newArr[i]);
+        }
 
     }
 
-    public static void removeElement(int[] arr, int element) {
-    	int n = arr.length; 
+    public static int[] removeElement(int[] arr, int n, int element) {
+    	// int n = arr.length; 
         int count = 0;
 
         // finding the count
@@ -28,8 +29,11 @@ public class RemoveElementFromArray {
             }
         }
 
+        //creating new array
+
         int[] newArr = new int[n - count];
         int j = 0;
+
 
         for (int i = 0; i < n; i++) {
             if (arr[i] != element) {
@@ -37,9 +41,11 @@ public class RemoveElementFromArray {
                 j++;
             }
         }
+        return newArr;
 
-         for (int i = 0; i < newArr.length; i++) {
-            System.out.println(newArr[i]);
-        }
+        //  for (int i = 0; i < newArr.length; i++) {
+            
+        //     System.out.println(newArr[i]);
+        // }
     }
 }
